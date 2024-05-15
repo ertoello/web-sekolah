@@ -1,0 +1,153 @@
+/* untuk body,stylenya sebagai berikut: */
+body {
+    font: 14px/28px arial sans-serif;
+    background-color: #887767;
+    color: #333;
+}
+
+/* untuk top-bar, menggunakan style sebangai berikut. */
+.top-bar {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    height: 40px;
+    background-color: #9AACB8;
+    border-bottom: 10px solid #D9DAD4;
+    z-index: 999;
+    font-size: 9px;
+}
+
+/* untuk container. codingan sebagai berikut dengan kelas container. */
+.container {
+    width: 960px;
+    margin: 100px auto 50px;
+    background-color: #D9DAD4;
+    position: relative;
+}
+
+/* style untuk logo sekolah sebagai berikut. dengan kelas instagram */
+.instagram {
+    width: 200px;
+    height: 200px;
+    background-image: url(img/logo7.png);
+    background-repeat: no-repeat;
+    display: inline-block;
+    position: absolute;
+    top: -1px;
+    right: -70px;
+
+}
+
+/* style untuk logo tombol 'home' sebagai berikut: dengan kelas home */
+.home {
+    width: 50px;
+    height: 52px;
+    background-image: url(img/home6.jpg);
+    background-repeat: no-repeat;
+    display: inline-block;
+    text-indent: -9999px;
+    position: absolute;
+    bottom: 5px;
+    left: 7px;
+    color: white;
+}
+
+/* style untuk header sebagai berikut. dengan kelas header */
+.header {
+    padding: 9px 20px;
+}
+
+/* untuk judul website sebagai berikut */
+.header .judul {
+    font-size: 30px;
+    font-weight: bold;
+    margin-left: 30px;
+}
+
+/* untuk tab-menu, stylenya sebagai berikut */
+.header ul li {
+    display: inline-block;
+    margin-top: 8px;
+    margin-right: 10px;
+}
+
+/* Style untuk tag a pada kelas header */
+.header a {
+    text-decoration: none;
+    color: #3D3D3B;
+    padding: 3px;
+}
+
+.header a:hover {
+    background-color: lightskyblue;
+    color: white;
+}
+
+/* Style untuk image sekolah dengan kelas foto */
+.foto {
+    height: 500px;
+    background-image: url(img/bgpoto.jpg);
+    background-size: cover;
+    background-position: 0 -82px;
+    border-bottom: 5px solid #A38458;
+    border-top: 5px solid #A38458;
+}
+
+/* Style untuk content website */
+.main {
+    width: 600px;
+    padding: 20px;
+    box-sizing: border-box;
+    float: left;
+}
+
+/* Style untuk sidebar  */
+.sidebar {
+    width: 300px;
+    float: right;
+    padding: 10px;
+}
+
+.sidebar h5 {
+    font-weight: bold;
+    color: #666;
+
+}
+
+.sidebar img {
+    width: 200px;
+    padding-right: 40px;
+
+}
+
+.sidebar p {
+    font: 10px/20px arial;
+}
+
+/* Style untuk Footer */
+.footer {
+    background-color: #333;
+    padding: 5px;
+}
+
+/* Style untuk footer */
+.footer .copy {
+    color: #eaeaee;
+    text-align: center;
+    font-size: 12px;
+}
+
+.cf:before,
+.cf:after {
+    content: " ";
+    display: table;
+}
+
+.cf:after {
+    clear: both;
+}
+
+.cf {
+    *zoom: 1;
+}
