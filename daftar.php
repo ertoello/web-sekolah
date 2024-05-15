@@ -107,7 +107,7 @@ if( tambah($_POST)> 0 ){
 <!-- dan terakhir, ada div dengan kelas footer untuk mendesain footer.-->
         <div class="footer">
             <p class="copy">PELITA CAHAYA HIGHSCHOOL</p>
-            <a href="http://localhost/websiteerto/websiteku/project1web/informasi.php" class="home" >HOME</a>
+            <a href="https://ertoello.github.io/web-sekolah/informasi.html" class="home" >HOME</a>
         </div>
         </div>
 </body>

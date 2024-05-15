@@ -84,7 +84,7 @@ link menuju instagram sekolah pelita cahaya  -->
     <!-- dan terakhir, terakhir footer untuk footer website. -->
         <div class="footer">
             <p class="copy">PELITA CAHAYA HIGHSCHOOL</p>
-            <a href="http://localhost/websiteerto/websiteku/project1web/informasi.php" class="home" >HOME</a>
+            <a href="https://ertoello.github.io/web-sekolah/informasi.html" class="home" >HOME</a>
         </div>
         </div>
         
