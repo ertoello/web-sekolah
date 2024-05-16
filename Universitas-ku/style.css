@@ -1,0 +1,104 @@
+/* untuk body, menggunakan style sebagai berikut: */
+body {
+    font: 14px/28px arial sans-serif;
+    background-image: url(img/univ.jpg);
+    color: whitesmoke;
+    background-position: 1050px -300px;
+}
+
+/*CSS UNTUK FILE 'utama.php'*/
+/* untuk pembungkus websitenya yang terdapat di file 'utama.php', style sebagai berikut dengan kelas isi. */
+.isi {
+    width: 900px;
+    padding: 40px 50px 150px;
+    margin: 80px 100px 40px;
+    background-color: #2212B2;
+    position: absolute;
+    background-position: 150px -300px;
+    border: 10px solid #E2753F;
+    font-size: 25px;
+    text-align: center;
+}
+
+/* untuk logo universitas yang terdapat di file 'utama.php'style sebagai berikut: dengan kelas logo */
+.logo {
+    width: 100px;
+    height: 101px;
+    background-image: url(img/ubsi.png);
+    background-repeat: no-repeat;
+    display: inline-block;
+    position: fixed;
+    top: 0px;
+    left: 3px;
+    z-index: 10;
+}
+
+/* untuk logo info universitas yang terdapat di file 'utama.php', style sebagai berikut: dengan kelas info */
+.info {
+    width: 90px;
+    height: 61px;
+    background-image: url(img/rumah.jpg);
+    background-repeat: no-repeat;
+    display: inline-block;
+    position: absolute;
+    bottom: 75px;
+    left: 350px;
+}
+
+/* style untuk logo fakultas dan jurusan yang terdapat di file 'utama.php' sebagai berikut: dengan kelas fajur */
+.fajur {
+    width: 70px;
+    height: 78px;
+    background-image: url(img/fajur.jpg);
+    background-repeat: no-repeat;
+    display: inline-block;
+    position: absolute;
+    bottom: 60px;
+    left: 550px;
+}
+
+/* style untuk logo log out yang terdapat di file 'utama.php' sebagai berikut: dengan kelas fajur */
+.power {
+    width: 100px;
+    height: 55px;
+    background-image: url(img/power2.jpg);
+    background-repeat: no-repeat;
+    display: inline-block;
+    position: fixed;
+    top: 0px;
+    right: -38px;
+}
+
+/*CSS UNTUK FILE 'profil.php' dan 'fajur.php'*/
+/* untuk pembungkus websitenya yang terdapat di file 'profil.php' dan 'fajur.php' codingan sebagai berikut: dengan kelas isi. */
+.pro {
+    width: 900px;
+    padding: 40px 50px 150px;
+    margin: 80px 100px 40px;
+    background-color: #2212B2;
+    position: absolute;
+    background-position: 150px -300px;
+    border: 10px solid #E2753F;
+    text-align: center;
+}
+
+/*Untuk image kampus yang terdapat di file 'profil.php' dan 'fajur.php', diberi style sebagai berikut : */
+.kampusku {
+    height: 324px;
+    background-image: url(img/kampusku.jpg);
+    background-position: -60px 0px;
+    border-bottom: 5px solid lightskyblue;
+    border-top: 5px solid lightskyblue;
+}
+
+/* style untuk logo tombol 'back' yang terdapat di file 'profil.php' dan 'fajur.php' sebagai berikut: dengan kelas fajur */
+.back {
+    width: 100px;
+    height: 55px;
+    background-image: url(img/kembali1.jpg);
+    background-repeat: no-repeat;
+    display: inline-block;
+    position: fixed;
+    bottom: 0px;
+    left: 3px;
+}
