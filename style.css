@@ -1,153 +1,176 @@
-/* untuk body,stylenya sebagai berikut: */
+/* Base styles */
 body {
-    font: 14px/28px arial sans-serif;
+    font: 14px/28px Arial, sans-serif;
     background-color: #887767;
     color: #333;
+    margin: 0;
+    padding: 0;
 }
 
-/* untuk top-bar, menggunakan style sebangai berikut. */
+/* Top bar */
 .top-bar {
     position: fixed;
-    top: 0px;
-    left: 0px;
-    right: 0px;
+    top: 0;
+    left: 0;
+    right: 0;
     height: 40px;
     background-color: #9AACB8;
     border-bottom: 10px solid #D9DAD4;
     z-index: 999;
-    font-size: 9px;
+    font-size: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-/* untuk container. codingan sebagai berikut dengan kelas container. */
+/* Main container */
 .container {
-    width: 960px;
-    margin: 100px auto 50px;
+    margin-top: 60px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 60px auto 50px;
     background-color: #D9DAD4;
     position: relative;
 }
 
-/* style untuk logo sekolah sebagai berikut. dengan kelas instagram */
+/* Instagram logo */
 .instagram {
-    width: 200px;
-    height: 200px;
+    width: 80px;  /* Ukuran logo lebih kecil */
+    height: 80px; /* Ukuran logo lebih kecil */
     background-image: url(img/logo7.png);
     background-repeat: no-repeat;
-    display: inline-block;
+    background-size: cover;
     position: absolute;
-    top: -1px;
-    right: -70px;
-
+    top: 30px;  /* Posisi turun sedikit */
+    right: 30px; /* Posisi logo lebih ke kiri */
+    transition: transform 0.3s ease;
 }
 
-/* style untuk logo tombol 'home' sebagai berikut: dengan kelas home */
-.home {
-    width: 50px;
-    height: 52px;
-    background-image: url(img/home6.jpg);
-    background-repeat: no-repeat;
-    display: inline-block;
-    text-indent: -9999px;
-    position: absolute;
-    bottom: 5px;
-    left: 7px;
-    color: white;
+.instagram:hover {
+    transform: scale(1.03);
 }
 
-/* style untuk header sebagai berikut. dengan kelas header */
+/* Header section */
 .header {
-    padding: 9px 20px;
+    display: flex;
+    justify-content: flex-start; /* Mengubah dari space-between ke flex-start untuk rata kiri */
+    align-items: center;
+    padding: 20px;
+    background-color: #F2F2F2;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* untuk judul website sebagai berikut */
-.header .judul {
-    font-size: 30px;
+.header .judul h1 {
+    font-size: 32px;
     font-weight: bold;
-    margin-left: 30px;
+    color: #3D3D3B;
+    margin-right: 50px; /* Memberikan jarak antara judul dan menu */
 }
 
-/* untuk tab-menu, stylenya sebagai berikut */
-.header ul li {
-    display: inline-block;
-    margin-top: 8px;
-    margin-right: 10px;
+nav ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
-/* Style untuk tag a pada kelas header */
-.header a {
+nav ul li {
+    margin: 0 15px;
+}
+
+nav a {
     text-decoration: none;
     color: #3D3D3B;
-    padding: 3px;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.header a:hover {
-    background-color: lightskyblue;
+nav a:hover {
+    background-color: #4CAF50;
     color: white;
 }
 
-/* Style untuk image sekolah dengan kelas foto */
+/* Hero image */
 .foto {
     height: 500px;
     background-image: url(img/bgpoto.jpg);
     background-size: cover;
-    background-position: 0 -82px;
+    background-position: center;
     border-bottom: 5px solid #A38458;
     border-top: 5px solid #A38458;
 }
 
-/* Style untuk content website */
-.main {
-    width: 600px;
-    padding: 20px;
-    box-sizing: border-box;
-    float: left;
+/* Content area */
+.content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 20px 0;
 }
 
-/* Style untuk sidebar  */
+.main {
+    flex: 1 1 60%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
 .sidebar {
-    width: 300px;
-    float: right;
-    padding: 10px;
+    flex: 1 1 35%;
+    background-color: #F9F9F9;
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 8px;
 }
 
 .sidebar h5 {
+    font-size: 20px;
     font-weight: bold;
     color: #666;
-
+    margin-bottom: 15px;
 }
 
 .sidebar img {
-    width: 200px;
-    padding-right: 40px;
-
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 15px;
 }
 
 .sidebar p {
-    font: 10px/20px arial;
+    font-size: 14px;
 }
 
-/* Style untuk Footer */
+/* Footer */
 .footer {
     background-color: #333;
-    padding: 5px;
-}
-
-/* Style untuk footer */
-.footer .copy {
+    padding: 10px;
     color: #eaeaee;
     text-align: center;
-    font-size: 12px;
+    font-size: 14px;
 }
 
-.cf:before,
-.cf:after {
-    content: " ";
-    display: table;
-}
+/* Media Query for Responsiveness */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        text-align: center;
+    }
 
-.cf:after {
-    clear: both;
-}
+    .header .judul h1 {
+        font-size: 28px;
+    }
 
-.cf {
-    *zoom: 1;
+    .content {
+        flex-direction: column;
+    }
+
+    .main, .sidebar {
+        flex: 1 1 100%;
+    }
+
+    .instagram {
+        top: 30px;
+        right: 20px;
+    }
 }

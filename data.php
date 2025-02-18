@@ -1,14 +1,9 @@
-<!-- berikut adalah codingan keseluruhan untuk data siswa -->
 <?php
-// require funcion.php
-// file funcions.php adalah file koneksi untuk menghubungkan antara data input ke database 
-// dan dari database akan tampil di halaman data siswa
 require 'funcions.php';
-//ambil data dari database dgn tabel data siswa
 $mahasiswa = query("SELECT * FROM mahasiswaubsi");
-// Codingan dibawah ini adalah pencaharian data siswa. Pencahariannya berrdasarkan nama, nik, email, dan jurusan. 
+
 if(isset($_POST["cari"])){
-    $mahasiswa= cari($_POST["keyword"]);
+    $mahasiswa = cari($_POST["keyword"]);
 }
 ?>
 <!DOCTYPE html>
@@ -17,76 +12,153 @@ if(isset($_POST["cari"])){
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- codingan ini menggunakan title Data Siswa dan link style menggunakan file styleform.css --> 
     <title>DATA SISWA</title>
+    <link rel="icon" href="img/logo7.png" type="image/x-icon"> <!-- Ganti dengan file favicon Anda -->
     <link rel="stylesheet" href="styleform.css">
-    <!-- dibawah ini adalah style tambahan untuk file data.php dengan class home -->
-    <style>
-        .home{
-            bottom: 5px;
-            left: 2px;
-            
+    <!-- <style>
+        /* Reset & Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-        .container{
-            border-left: 10px solid #D9DAD4;
-            border-right: 10px solid #D9DAD4; 
+
+        body {
+            font: 14px/1.6 Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            line-height: 1.6;
         }
-    </style>
+
+        /* Top Bar */
+        .top-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 40px;
+            background-color: #4f5d73;
+            border-bottom: 10px solid #e0e0e0;
+            z-index: 999;
+        }
+
+        /* Instagram Logo */
+        .instagram {
+            width: 60px;
+            height: 60px;
+            background-image: url(img/logo7.png);
+            background-size: contain;
+            background-repeat: no-repeat;
+            display: block;
+            position: absolute;
+            top: 10px;
+            right: 20px;
+        }
+
+        /* Main Container */
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin-top: 60px; /* Offset top bar */
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .header h1 {
+            font-size: 32px;
+            font-weight: bold;
+            color: #2d2d2d;
+        }
+
+
+        /* Footer */
+        .footer {
+            background-color: #4f5d73;
+            padding: 10px;
+            text-align: center;
+            color: white;
+            border-radius: 0 0 10px 10px;
+            margin-top: 30px;
+        }
+
+        .footer .copy {
+            font-size: 14px;
+        }
+
+        .footer a {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            margin-left: 20px;
+        }
+
+        /* Responsive */
+        @media screen and (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+
+            .header h1 {
+                font-size: 28px;
+            }
+
+            input[type="text"] {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+
+            table {
+                font-size: 12px;
+            }
+        }
+    </style> -->
 </head>
-<body >
-    <!-- selanjutnya kita langsung ke body codingannya, disini ada div dengan class tob-bar  
-    untuk mendesain bagian atas ujung website-->
+<body>
     <div class="top-bar"></div>
-    <!-- div dengan class container adalah isi contentnya  -->
-    <div class="container" >
-<!-- Selanjutnya, tag a dengan class instagram adalah logo sekolah yang memiliki 
-link menuju instagram sekolah pelita cahaya  -->
-        <a href="https://www.instagram.com/pelcah_shs/" class="instagram" ></a>
-<!-- Div dengan class header 
-        Div ini kegunaannya untuk bisa diberi style untuk judul dan tabel pada 
-        file css, agar stylenya bisa kami desain sesuai apa yg kami mau.--> 
-    <div class="header">
-        <h1 align=center>DATA SISWA</h1><!-- Selanjutnya, judul websitenya menggunakan tag h1 -->
-    </div>
-<!--Pada halaman Data Siswa,codingan menggunakan tag table-->
-    <form action="" method="post">
-        <input type="text" name="keyword" size="40" 
-        autofocus placeholder="Masukkan keyword pencarian..." autocomplete="off" >
-        <button type="submit" name="cari">Cari!</button>
-        <br>
-        <br>
-        <hr>
-    </form>
-    <table border="1" cellpadding="20" cellspacing="3" width="900" align=center bgcolor="#A5A04A">
-        <tr>
-            <th>No</th>
-            <th>Foto Siswa</th>
-            <th>Nama</th>
-            <th>NIK</th>
-            <th>Email</th>
-            <th>Jurusan</th>
-        </tr>
-    
-        <?php $i = 1;?>
-        <?php foreach($mahasiswa as $row):
-        ?>
-        <tr>
-            <td><?= $i;?></td>
-            <td><img src="img/<?= $row["gambar"]; ?>" height ="80"></td>
-            <td ><?= $row["nama"]; ?></td>
-            <td><?= $row["nik"]; ?></td>
-            <td><?= $row["email"]; ?></td>
-            <td><?= $row["jurusan"]; ?></td>
-        </tr>
-        <?php $i++; ?>
-        <?php endforeach; ?>
-    </table>
-    <!-- dan terakhir, terakhir footer untuk footer website. -->
+    <div class="container">
+        <a href="https://www.instagram.com/pelcah_shs/" class="instagram" target="_blank"></a>
+        <div class="header">
+            <h1>DATA SISWA</h1>
+        </div>
+        <form action="" method="post">
+            <input type="text" name="keyword" size="40" autofocus placeholder="Masukkan keyword pencarian..." autocomplete="off">
+            <button type="submit" name="cari">Cari!</button>
+        </form>
+        <table>
+            <tr>
+                <th>No</th>
+                <th>Foto Siswa</th>
+                <th>Nama</th>
+                <th>NIK</th>
+                <th>Email</th>
+                <th>Jurusan</th>
+            </tr>
+            <?php $i = 1; ?>
+            <?php foreach ($mahasiswa as $row): ?>
+            <tr>
+                <td><?= $i; ?></td>
+                <td><img src="img/<?= $row["gambar"]; ?>" height="80"></td>
+                <td><?= $row["nama"]; ?></td>
+                <td><?= $row["nik"]; ?></td>
+                <td><?= $row["email"]; ?></td>
+                <td><?= $row["jurusan"]; ?></td>
+            </tr>
+            <?php $i++; ?>
+            <?php endforeach; ?>
+        </table>
         <div class="footer">
-            <p class="copy">PELITA CAHAYA HIGHSCHOOL</p>
-            <a href="https://ertoello.github.io/web-sekolah/informasi.html" class="home" >HOME</a>
-        </div>
-        </div>
-        
+        <p class="copy">PELITA CAHAYA HIGHSCHOOL</p>
+        <a href="index.html" class="home">HOME</a>
+    </div>
+    </div>
 </body>
 </html>
