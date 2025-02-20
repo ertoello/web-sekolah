@@ -134,27 +134,32 @@ if(isset($_POST["cari"])){
             <button type="submit" name="cari">Cari!</button>
         </form>
         <table>
-            <tr>
-                <th>No</th>
-                <th>Foto Siswa</th>
-                <th>Nama</th>
-                <th>NIK</th>
-                <th>Email</th>
-                <th>Jurusan</th>
-            </tr>
-            <?php $i = 1; ?>
-            <?php foreach ($mahasiswa as $row): ?>
-            <tr>
-                <td><?= $i; ?></td>
-                <td><img src="img/<?= $row["gambar"]; ?>" height="80"></td>
-                <td><?= $row["nama"]; ?></td>
-                <td><?= $row["nik"]; ?></td>
-                <td><?= $row["email"]; ?></td>
-                <td><?= $row["jurusan"]; ?></td>
-            </tr>
-            <?php $i++; ?>
-            <?php endforeach; ?>
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>Foto Siswa</th>
+                    <th>Nama</th>
+                    <th>NIK</th>
+                    <th>Email</th>
+                    <th>Jurusan</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php $i = 1; ?>
+                <?php foreach ($mahasiswa as $row): ?>
+                <tr>
+                    <td data-label="No"><?= $i; ?></td>
+                    <td data-label="Foto Siswa"><img src="img/<?= $row["gambar"]; ?>" height="80"></td>
+                    <td data-label="Nama"><?= $row["nama"]; ?></td>
+                    <td data-label="NIK"><?= $row["nik"]; ?></td>
+                    <td data-label="Email"><?= $row["email"]; ?></td>
+                    <td data-label="Jurusan"><?= $row["jurusan"]; ?></td>
+                </tr>
+                <?php $i++; ?>
+                <?php endforeach; ?>
+            </tbody>
         </table>
+
         <div class="footer">
         <p class="copy">PELITA CAHAYA HIGHSCHOOL</p>
         <a href="index.html" class="home">HOME</a>

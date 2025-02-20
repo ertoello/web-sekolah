@@ -144,10 +144,58 @@ nav a:hover {
 /* Footer */
 .footer {
     background-color: #333;
-    padding: 10px;
+    padding: 15px;
     color: #eaeaee;
     text-align: center;
     font-size: 14px;
+    position: relative;
+    border-top: 4px solid #555;
+}
+
+/* Teks Copyright */
+.footer .copy {
+    margin: 0;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* Tombol Home */
+.home {
+    width: 50px;
+    height: 50px;
+    background-image: url('img/home6.jpg'); /* Pastikan path gambar benar */
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: inline-block;
+    position: absolute;
+    top: -25px; /* Mengangkat tombol di atas footer */
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 50%; /* Membuat tombol menjadi lingkaran */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Hover Effect */
+.home:hover {
+    opacity: 0.8;
+    transition: 0.3s ease-in-out;
+}
+
+/* Responsive untuk Mobile */
+@media screen and (max-width: 600px) {
+    .home {
+        width: 40px;
+        height: 40px;
+        top: -20px;
+    }
+    
+    .footer {
+        padding: 10px;
+    }
+
+    .footer .copy {
+        font-size: 12px;
+    }
 }
 
 /* Media Query for Responsiveness */
